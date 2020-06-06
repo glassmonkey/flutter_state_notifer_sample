@@ -1,15 +1,15 @@
 import 'package:equatable/equatable.dart';
 
 //実際はfreezedとか使った方がよい
-class Counter extends Equatable {
-  const Counter({this.count = 0});
+class CounterModel extends Equatable {
+  const CounterModel({this.count = 0});
 
-  Counter increment() {
+  CounterModel increment() {
     final int nextCount = count + 1;
     if (nextCount > 9) {
-      return const Counter(count: 0);
+      return const CounterModel(count: 0);
     }
-    return Counter(count: nextCount);
+    return CounterModel(count: nextCount);
   }
 
   final int count;

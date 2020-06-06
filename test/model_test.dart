@@ -4,16 +4,16 @@ import 'package:fluttertestcountapp/counter_model.dart';
 void main() {
   group("カウンターのテスト", () {
     test("0から始まる", () {
-      const Counter counter = Counter();
+      const CounterModel counter = CounterModel();
       expect(counter.count, 0);
-      final Counter nextCounter = counter.increment();
+      final CounterModel nextCounter = counter.increment();
       //イミュータブルなのでそのまま
       expect(counter.count, 0);
       expect(nextCounter.count, 1);
     });
     test("9から0になる。", () {
-      const Counter counter = Counter(count: 99);
-      final Counter nextCounter = counter.increment();
+      const CounterModel counter = CounterModel(count: 99);
+      final CounterModel nextCounter = counter.increment();
       expect(counter.count, 99);
       expect(nextCounter.count, 0);
     });
