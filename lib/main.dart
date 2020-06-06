@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           // closer together (more dense) than on mobile platforms.
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: StateNotifierProvider<CountNotifier, Counter>(
+        home: StateNotifierProvider<CountNotifier, CounterModel>(
           create: (_) => CountNotifier(),
           child: MyHomePage(),
         ));
@@ -41,7 +41,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final int count =
-        context.select<Counter, int>((Counter state) => state.count);
+        context.select<CounterModel, int>((CounterModel state) => state.count);
     return Scaffold(
       appBar: AppBar(
         title: const Text("カウンターサンプル"),

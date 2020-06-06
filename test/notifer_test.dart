@@ -6,9 +6,9 @@ void main() {
   group("Count notifierのテスト", () {
     test("カウント結果が変動する", () {
       final CountNotifier countNotifier = CountNotifier();
-      expect(countNotifier.debugState, const Counter(count: 0));
+      expect(countNotifier.debugState, const CounterModel(count: 0));
       countNotifier.next();
-      expect(countNotifier.debugState, const Counter(count: 1));
+      expect(countNotifier.debugState, const CounterModel(count: 1));
     });
   });
 }
