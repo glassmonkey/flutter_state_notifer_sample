@@ -12,9 +12,9 @@ void main() {
       expect(nextCounter.count, 1);
     });
     test("9から0になる。", () {
-      const CounterModel counter = CounterModel(count: 99);
+      const CounterModel counter = CounterModel(count: 9);
       final CounterModel nextCounter = counter.increment();
-      expect(counter.count, 99);
+      expect(counter.count, 9);
       expect(nextCounter.count, 0);
     });
   });
